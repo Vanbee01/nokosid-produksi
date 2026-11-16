@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NokosID - Layanan Nomor Virtual OTP</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="navbar"><div class="container nav-content"><div class="brand">Nokos<span>ID</span></div><div id="nav-user" class="wallet-box hidden"><span id="nav-email" class="muted"></span><span>Saldo: <strong id="balance">Rp 0</strong></span><button id="btn-logout" class="btn btn-secondary">Keluar</button></div></div></header>
+<main class="container">
+<section id="auth-view" class="card auth-card hidden">
+<h2 id="auth-title">Masuk</h2><p class="subtitle">Beli nomor virtual untuk menerima SMS verifikasi (OTP).</p>
+<div class="form-group"><label for="email">Email</label><input id="email" type="email" autocomplete="email"></div>
+<div class="form-group"><label for="password">Password (min. 8 karakter)</label><input id="password" type="password" autocomplete="current-password"></div>
+<button id="btn-auth" class="btn btn-primary btn-full">Masuk</button>
+<p class="switch"><span id="auth-switch-text">Belum punya akun?</span> <a href="#" id="auth-switch">Daftar</a></p>
+<p class="muted small">Dengan mendaftar, Anda setuju tidak menggunakan layanan ini untuk penipuan, penyalahgunaan akun, atau pelanggaran hukum.</p><div id="auth-alert" class="alert hidden"></div>
+</section>
+<div id="app-view" class="hidden"><div id="alert" class="alert hidden" role="status"></div><div class="main-grid">
+<div class="stack"><section class="card"><h2>Pesan Nomor Baru</h2><p class="subtitle">Pilih layanan dan negara.</p>
+<div class="form-group"><label for="svc">1. Layanan / Aplikasi</label><select id="svc"></select></div><div class="form-group"><label for="cty">2. Negara</label><select id="cty"></select></div>
+<div class="price-summary"><span>Total Harga:</span><strong id="price">Rp 0</strong></div><button id="btn-order" class="btn btn-primary btn-full">Beli Nomor Sekarang</button></section>
+<section class="card"><h2>Isi Saldo</h2><p class="subtitle">Pembayaran diproses lewat Tripay.</p><div class="form-group"><label for="amount">Nominal (Rp)</label><input id="amount" type="number" inputmode="numeric" value="25000"></div><div class="form-group"><label for="method">Metode</label><select id="method"></select></div><button id="btn-deposit" class="btn btn-primary btn-full">Bayar</button><div id="deposits" class="deposits"></div></section></div>
+<section class="card"><div class="panel-header"><h2>Nomor Aktif &amp; Kotak Masuk OTP</h2><span class="badge-live">Auto-Refresh</span></div><div id="orders"></div></section>
+</div></div>
+</main><script src="app.js"></script>
+</body></html>
